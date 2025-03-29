@@ -16,6 +16,15 @@
         <interestWorkerType>FollowMe.InterestWorker_Attenborough</interestWorkerType>
     </FollowMe.CinematicCamera>
 
+    //Added for MortahSmurph 3-28-2025 UrsulaTheOld
+    <FollowMe.CinematicCamera>
+        <defName>Camera_Colonist</defName>
+        <label>colonist</label>
+        <description>all your people and animals. Includes colony mechs and ghouls.</description>
+        <interestWorkerType>FollowMe.InterestWorker_Colonist</interestWorkerType>
+        <secondsOfFame>10~30</secondsOfFame>
+    </FollowMe.CinematicCamera>
+ 
     <FollowMe.CinematicCamera>
         <defName>Camera_FlogIt</defName>
         <label>flog it</label>

@@ -5,6 +5,7 @@ using System.Linq;
 
 using RimWorld;
 using Verse;
+using Verse.AI;
 
 namespace FollowMe {
     public abstract class InterestWorker {
@@ -40,6 +41,62 @@ namespace FollowMe {
                 interest *= 2f;
             }
 
+            return interest;
+        }
+    }
+
+//Added for MortalSmurph 3-28-2025 UrsulaTheOld
+//Follow colonists only including colony mechs, ghouls and animals
+    public class InterestWorker_Colonist: InterestWorker {
+        public override ThingRequestGroup PotentiallyInteresting => ThingRequestGroup.Pawn;
+
+        public override float InterestFor(Thing thing) {
+            if (thing is not Pawn pawn) {
+                return 0f;
+            }
+/*            if (!pawn.Faction.IsPlayer) {
+                return 0;
+            }
+*/
+            if (!pawn.IsColonist && !pawn.IsColonyMutant && !pawn.IsColonyMech) {
+                return 0f;
+            }
+
+            float interest = 1f;
+            JobDef job = pawn.CurJobDef;
+            if (job == JobDefOf.BeatFire) {
+                interest *= 4f;
+            }
+
+            if (job == JobDefOf.Wait_Combat) {
+                interest *= 5f;
+            }
+
+            if (job == JobDefOf.TendPatient) {
+                interest *= 3f;
+            }
+           if (job == JobDefOf.AttackMelee || job == JobDefOf.AttackStatic) {
+                interest *= 5f;
+            }
+
+            if (pawn.IsColonyMutant) {
+                interest *= 3f;
+            }
+/*            interest *= 1 + (pawn.health.hediffSet.BleedRateTotal * 5);
+            JobDef job = pawn.CurJobDef;
+            if (job == JobDefOf.ExtinguishSelf) {
+                interest *= 5f;
+            }
+
+
+            if (job == JobDefOf.Rescue) {
+                interest *= 3f;
+            }
+
+            if (job == JobDefOf.TendPatient) {
+                interest *= 2f;
+            }
+*/
             return interest;
         }
     }
