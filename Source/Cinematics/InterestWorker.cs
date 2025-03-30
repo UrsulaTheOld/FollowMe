@@ -54,10 +54,7 @@ namespace FollowMe {
             if (thing is not Pawn pawn) {
                 return 0f;
             }
-/*            if (!pawn.Faction.IsPlayer) {
-                return 0;
-            }
-*/
+
             if (!pawn.IsColonist && !pawn.IsColonyMutant && !pawn.IsColonyMech && !pawn.IsNonMutantAnimal) {
                 return 0f;
             }
