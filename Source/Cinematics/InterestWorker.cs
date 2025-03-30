@@ -62,7 +62,7 @@ namespace FollowMe {
             float interest = 1f;
 
             if (pawn.IsColonist || pawn.IsColonyMutant || pawn.IsColonyMech)  {
-                interest *= 6f;
+                interest *= 8f;
             }
 
             JobDef job = pawn.CurJobDef;
