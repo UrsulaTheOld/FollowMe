@@ -1,8 +1,8 @@
 {
-    "name": "Follow Me! (We stand with the people of Ukraine!)",
+    "name": "Follow Me! (Ursula Fork)",
     "sourceDir": ".",
     "targetDir": "FollowMe",
-    "url": "https://github.com/picasso250/FollowMe",
+    "url": "https://github.com/ursulatheold/FollowMe",
     "version": {
         "major": 5,
         "minor": 5,

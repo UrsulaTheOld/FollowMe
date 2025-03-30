@@ -63,9 +63,14 @@ namespace FollowMe {
             }
 
             float interest = 1f;
+
+            if (pawn.IsColonist || pawn.IsColonyMutant || pawn.IsColonyMech)  {
+                interest *= 4f;
+            }
+
             JobDef job = pawn.CurJobDef;
             if (job == JobDefOf.BeatFire) {
-                interest *= 8f;
+                interest *= 8f; 
             }
 
             if (job == JobDefOf.Wait_Combat) {
