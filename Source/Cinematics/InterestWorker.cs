@@ -58,45 +58,32 @@ namespace FollowMe {
                 return 0;
             }
 */
-            if (!pawn.IsColonist && !pawn.IsColonyMutant && !pawn.IsColonyMech) {
+            if (!pawn.IsColonist && !pawn.IsColonyMutant && !pawn.IsColonyMech && !pawn.IsNonMutantAnimal) {
                 return 0f;
             }
 
             float interest = 1f;
             JobDef job = pawn.CurJobDef;
             if (job == JobDefOf.BeatFire) {
-                interest *= 4f;
+                interest *= 8f;
             }
 
             if (job == JobDefOf.Wait_Combat) {
-                interest *= 5f;
+                interest *= 10f;
             }
 
             if (job == JobDefOf.TendPatient) {
-                interest *= 3f;
+                interest *= 6f;
             }
-           if (job == JobDefOf.AttackMelee || job == JobDefOf.AttackStatic) {
-                interest *= 5f;
+
+            if (job == JobDefOf.AttackMelee || job == JobDefOf.AttackStatic) {
+                interest *= 10f;
             }
 
             if (pawn.IsColonyMutant) {
-                interest *= 3f;
-            }
-/*            interest *= 1 + (pawn.health.hediffSet.BleedRateTotal * 5);
-            JobDef job = pawn.CurJobDef;
-            if (job == JobDefOf.ExtinguishSelf) {
-                interest *= 5f;
+                interest *= 10f;
             }
 
-
-            if (job == JobDefOf.Rescue) {
-                interest *= 3f;
-            }
-
-            if (job == JobDefOf.TendPatient) {
-                interest *= 2f;
-            }
-*/
             return interest;
         }
     }
