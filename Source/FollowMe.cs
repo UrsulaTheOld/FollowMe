@@ -93,7 +93,7 @@ namespace FollowMe {
             }
 
             // cancel current follow (toggle or thing == null)
-            else if (_currentlyFollowing && (thing == null || thing == _followedThing)) {
+           else if (_currentlyFollowing && (thing == null || thing == _followedThing)) {
                 StopFollow("toggled");
             }
 
@@ -191,9 +191,9 @@ namespace FollowMe {
 
         public static void TryJumpSmooth(GlobalTargetInfo target) {
             target = CameraJumper.GetAdjustedTarget(target);
-            if (!target.IsValid) {
-                StopFollow("invalid target");
-                return;
+            if (!target.IsValid) {            
+               StopFollow("invalid target");
+               return;
             }
 
             // we have to use our own logic for following spawned things, as CameraJumper

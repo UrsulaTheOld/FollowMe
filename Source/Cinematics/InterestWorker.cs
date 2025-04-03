@@ -46,7 +46,7 @@ namespace FollowMe {
     }
 
 //Added for MortalSmurph 3-28-2025 UrsulaTheOld
-//Follow colonists only including colony mechs, ghouls and animals
+//Follow colonists only including colony mechs, ghouls and an occasional animal
     public class InterestWorker_Colonist: InterestWorker {
         public override ThingRequestGroup PotentiallyInteresting => ThingRequestGroup.Pawn;
 
