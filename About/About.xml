@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ModMetaData>
-    <name>Follow Me!</name>
-    <author>Fluffy</author>
-    <packageId>Fluffy.FollowMe</packageId>
-    <description>Gives the camera tracking capabilities.
+    <name>Follow Me +colonist</name>
+    <author>UrsulaTheOld</author>
+    <packageId>UrsulaTheOld.FollowMe</packageId>
+    <description>Gives the camera tracking capabilities. Adds ability to follow colonists. Forked from Picasso250 on github.
+    
+    Original mod credit goes to Fluffy. <url>https://steamcommunity.com/id/FluffyMods/myworkshopfiles/?appid=294100</url> 
 
 &lt;size=28&gt;Features&lt;/size&gt;
 
@@ -11,7 +13,7 @@ Press the 'Home' key (default, can be changed with in-game keybinding settings) 
 
 &lt;b&gt;Does not require a new save game&lt;/b&gt;
 Can safely be enabled/disabled in ongoing saves.</description>
-    <url>https://github.com/fluffy-mods/FollowMe</url>
+    <url>https://github.com/UrsulaTheOld/FollowMe</url>
     <supportedVersions>
         <li>1.5</li>
     </supportedVersions>
